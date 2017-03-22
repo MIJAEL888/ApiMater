@@ -1,0 +1,280 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="MaterIniciativa" Class="DataMaterDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=PC-MJ\SQLEXPRESS;Initial Catalog=MaterIniciativa;Persist Security Info=True;User ID=sa" SettingsObjectName="MaterIniciativaData.Properties.Settings" SettingsPropertyName="MaterIniciativaConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.DepartmentGet" Method="DepartmentGet">
+    <Parameter Name="IdDepartment" Parameter="idDepartment" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DepartmentGetResult">
+      <Column Name="IdDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="IimagePath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UserUpdate" Method="UserUpdate">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Active" Parameter="active" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AppMember" Parameter="appMember" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Surname" Parameter="surname" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="InsertedId" Parameter="insertedId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.DepartmentList" Method="DepartmentList">
+    <ElementType Name="DepartmentListResult">
+      <Column Name="IdDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="IimagePath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.DepartmentPlantList" Method="DepartmentPlantList">
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <ElementType Name="DepartmentPlantListResult">
+      <Column Name="IdDepartment" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="IimagePath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EcoregionGet" Method="EcoregionGet">
+    <Parameter Name="IdEcoregion" Parameter="idEcoregion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="EcoregionGetResult">
+      <Column Name="IdEcoregion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EcoregionList" Method="EcoregionList">
+    <ElementType Name="EcoregionListResult">
+      <Column Name="IdEcoregion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.EcoRegionPlantList" Method="EcoRegionPlantList">
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <ElementType Name="EcoRegionPlantListResult">
+      <Column Name="IdEcoregion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PhotoGet" Method="PhotoGet">
+    <Parameter Name="IdPhoto" Parameter="idPhoto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PhotoGetResult">
+      <Column Name="IdPhoto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PhotoList" Method="PhotoList">
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PhotoListResult">
+      <Column Name="IdPhoto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="Path" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PhotoUpdate" Method="PhotoUpdate">
+    <Parameter Name="IdPhoto" Parameter="idPhoto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Name" Parameter="name" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Data" Parameter="data" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="Path" Parameter="path" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="InsertedId" Parameter="insertedId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PlantDepartmentList" Method="PlantDepartmentList">
+    <Parameter Name="IdDepartment" Parameter="idDepartment" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PlantDepartmentListResult">
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountSearchs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommonName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ScientificName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Family" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Characteristics" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Distributions" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Uses" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UptoDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Morphology" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Test" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PlantDepartmentUpdate" Method="PlantDepartmentUpdate">
+    <Parameter Name="IdDepartment" Parameter="idDepartment" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PlantEcoRegionList" Method="PlantEcoRegionList">
+    <Parameter Name="IdEcoRegion" Parameter="idEcoRegion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PlantEcoRegionListResult">
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountSearchs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommonName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ScientificName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Family" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Characteristics" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Distributions" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Uses" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UptoDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Morphology" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Test" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PlantEcoRegionUpdate" Method="PlantEcoRegionUpdate">
+    <Parameter Name="IdEcoRegion" Parameter="idEcoRegion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.PlantList" Method="PlantList">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommunName" Parameter="communName" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="PlantListResult">
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountSearchs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommonName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ScientificName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Family" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Characteristics" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Distributions" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Uses" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UptoDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Morphology" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Test" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PlantUpdate" Method="PlantUpdate">
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Status" Parameter="status" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CountSearchs" Parameter="countSearchs" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommonName" Parameter="commonName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="ScientificName" Parameter="scientificName" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Family" Parameter="family" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Characteristics" Parameter="characteristics" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Distributions" Parameter="distributions" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Uses" Parameter="uses" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="CreationDate" Parameter="creationDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="UptoDate" Parameter="uptoDate" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="Type" Parameter="type" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Morphology" Parameter="morphology" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="Color" Parameter="color" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="InsertedId" Parameter="insertedId" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UserFavoriteList" Method="UserFavoriteList">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Int32" DbType="Int" />
+    <ElementType Name="UserFavoriteListResult">
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountSearchs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommonName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ScientificName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Family" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Characteristics" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Distributions" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Uses" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UptoDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Morphology" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Test" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.UserFavoriteUpdate" Method="UserFavoriteUpdate">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.UserGet" Method="UserGet">
+    <Parameter Name="UserName" Parameter="userName" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="UserGetResult">
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Active" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="AppMember" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="SurName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PlantGet" Method="PlantGet">
+    <Parameter Name="IdPlant" Parameter="idPlant" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CommonName" Parameter="commonName" Type="System.String" DbType="VarChar(1)" />
+    <ElementType Name="PlantGetResult">
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountSearchs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommonName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ScientificName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Family" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Characteristics" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Distributions" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Uses" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UptoDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Morphology" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Test" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.PlantUserList" Method="PlantUserList">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Int32" DbType="Int" />
+    <ElementType Name="PlantUserListResult">
+      <Column Name="IdPlant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdUser" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CountSearchs" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CommonName" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="ScientificName" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Family" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Characteristics" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Distributions" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Uses" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CreationDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UptoDate" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Morphology" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Color" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Test" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
